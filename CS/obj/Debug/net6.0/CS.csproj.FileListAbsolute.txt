@@ -1,0 +1,15 @@
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\bin\Debug\net6.0\CS.exe
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\bin\Debug\net6.0\CS.deps.json
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\bin\Debug\net6.0\CS.runtimeconfig.json
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\bin\Debug\net6.0\CS.dll
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\bin\Debug\net6.0\CS.pdb
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\obj\Debug\net6.0\CS.csproj.AssemblyReference.cache
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\obj\Debug\net6.0\CS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\obj\Debug\net6.0\CS.AssemblyInfoInputs.cache
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\obj\Debug\net6.0\CS.AssemblyInfo.cs
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\obj\Debug\net6.0\CS.csproj.CoreCompileInputs.cache
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\obj\Debug\net6.0\CS.dll
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\obj\Debug\net6.0\refint\CS.dll
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\obj\Debug\net6.0\CS.pdb
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\obj\Debug\net6.0\CS.genruntimeconfig.cache
+C:\Users\Alaska\Documents\escola\programacao\w3resources\CS\obj\Debug\net6.0\ref\CS.dll
