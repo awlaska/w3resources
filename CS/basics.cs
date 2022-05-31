@@ -1,68 +1,84 @@
 ﻿using System.Data;
+using System.Threading.Channels;
 
 namespace ConsoleApp1;
 
+// Functions
+public static class func
+{
+    public static double fsum(int a, int b){
+        return a + b;
+    }
+    public static double fsubtract(int a, int b)
+    {
+        return a - b;
+    }
+    public static double fmultiply(int a, int b)
+    {
+        return a * b;
+    }
+    public static double fdivide(int a, int b)
+    {
+        return a / b;
+    }
+
+    public static string foperation(string a)
+    {
+        return new DataTable().Compute(a, null).ToString();
+    }
+
+}
+
+// Exercises
 public static class Basic
 {
-    private static void _001()
+    private static void ex001()
     {
         Console.WriteLine("\n\nWrite a C# Sharp program to print Hello and your name in a separate line.");
         
         Console.WriteLine("\nInsert your name: ");
-        string? _1_input = Console.ReadLine();
+        string? _input = Console.ReadLine();
         
-        Console.WriteLine("\nHello\n" + _1_input);
+        Console.WriteLine("\nHello\n" + _input);
     }
     
-    private static void _002()
+    private static void ex002()
     {
         Console.WriteLine("\n\nWrite a C# Sharp program to print the sum of two numbers.");
         
         Console.WriteLine("\nInsert the first number: ");
-        string? _2_numero1 = Console.ReadLine();
+        int _2_numero1 = Convert.ToInt32(Console.ReadLine());
         
         Console.WriteLine("Insert the second number: ");
-        string? _2_numero2 = Console.ReadLine();
+        int _2_numero2 = Convert.ToInt32(Console.ReadLine());
 
-        int _2_numero1i = Convert.ToInt32(_2_numero1);
-        int _2_numero2i = Convert.ToInt32(_2_numero2);
-        
-        int sum = _2_numero1i + _2_numero2i;
-
-        Console.WriteLine("The sum of {0} and {1} is: {2}", _2_numero1i, _2_numero2i, sum);
+        Console.WriteLine("The sum of {0} and {1} is: {2}", _2_numero1, _2_numero2, func.fsum(_2_numero1, _2_numero2));
     }
 
-    private static void _003()
+    private static void ex003()
     {
         Console.WriteLine("\n\nWrite a C# Sharp program to print the result of dividing two numbers.");
         
         Console.WriteLine("\nInsert the first number: ");
-        string? _3_numero1 = Console.ReadLine();
+        int _numero1 = Convert.ToInt32(Console.ReadLine());
         
         Console.WriteLine("Insert the second number: ");
-        string? _3_numero2 = Console.ReadLine();
+        int _numero2 = Convert.ToInt32(Console.ReadLine());
 
-        int _3_numero1i = Convert.ToInt32(_3_numero1);
-        int _3_numero2i = Convert.ToInt32(_3_numero2);
-
-        int _3_division = _3_numero1i / _3_numero2i;
-        
-        Console.WriteLine("The division between the two numbers is: " + _3_division);
+        Console.WriteLine("The division between {0} and {1} is: {2}: ", _numero1, _numero2, func.fdivide(_numero1, _numero2));
     }
 
-    private static void _004()
+    private static void ex004()
     {
         Console.WriteLine("\n\nWrite a C# Sharp program to print the result of the specified operations.");
         
         Console.WriteLine("\nInsert the operation: ");
-        string? _4_operation = Console.ReadLine();
+        string? _operation = Console.ReadLine();
         
-        string? _4_finalOperation = new DataTable().Compute(_4_operation, null).ToString();
-
-        Console.WriteLine("The solution: " + _4_finalOperation);
+        Console.WriteLine("The solution: " + func.foperation(_operation));
     }
     
-    private static void _005()
+    private static void ex005()
     {
         Console.WriteLine("\n\nWrite a C# Sharp program to swap two numbers.");
 
@@ -79,7 +95,7 @@ public static class Basic
 
     }
 
-    private static void _006()
+    private static void ex006()
     {
         Console.WriteLine("\n\nWrite a C# Sharp program to print the output of multiplication of three numbers which will be entered by the user.");
         
@@ -101,7 +117,7 @@ public static class Basic
         Console.WriteLine("\n{0} * {1} * {2} = {3}", _6_firsti, _6_secondi, _6_thirdi, _6_multiply);
     }
 
-    private static void _007()
+    private static void ex007()
     {
         Console.WriteLine("\n\nWrite a C# Sharp program to print on screen the output of adding, subtracting, multiplying and dividing of two numbers which will be entered by the user.");
 
@@ -125,7 +141,7 @@ public static class Basic
          Console.WriteLine("{0} / {1} = {2}", _7_firsti, _7_secondi, _7_divide);
     }
     
-    private static void _008()
+    private static void ex008()
     {
         Console.WriteLine("\n\nWrite a C# Sharp program that takes a number as input and print its multiplication table.");
 
@@ -145,7 +161,7 @@ public static class Basic
         } while (i <= 10);
     }
     
-    private static void _009()
+    private static void ex009()
     {
         Console.WriteLine("\n\nWrite a C# Sharp program that takes four numbers as input to calculate and print the average");
         
@@ -171,7 +187,7 @@ public static class Basic
         Console.WriteLine("The average of {0}, {1}, {2} and {3} is {4}", _9_oned, _9_twod, _9_threed, _9_fourd, _9_average);
     }
     
-    private static void _010()
+    private static void ex010()
     {
         Console.WriteLine("\n\nWrite a C# Sharp program to that takes three numbers(x,y,z) as input and print the output of (x+y).z and x.y + y.z.");
         
@@ -194,7 +210,7 @@ public static class Basic
         Console.WriteLine($"(x+y).z = {a}\nx.y + y.z = {b}");
     }
 
-    private static void _011()
+    private static void ex011()
     {
         Console.WriteLine("\nWrite a C# Sharp program that takes an age (for example 20) as input and prints something as \"You look older than 20\".");
         
@@ -204,7 +220,7 @@ public static class Basic
         Console.WriteLine($"You look older than {_11_age}");
     }
 
-    private static void _012()
+    private static void ex012()
     {
         Console.WriteLine("\nWrite a C# program to that takes a number as input and display it four times in a row (separated by blank spaces), and then four times in the next row, with no separation. You should do it two times: Use Console. Write and then use {0}.");
 
@@ -214,7 +230,7 @@ public static class Basic
         Console.WriteLine($"\n{_12_number} {_12_number} {_12_number} {_12_number}\n{_12_number}{_12_number}{_12_number}{_12_number}\n{_12_number} {_12_number} {_12_number} {_12_number}\n{_12_number}{_12_number}{_12_number}");
     }
 
-    private static void _013()
+    private static void ex013()
     {
         Console.WriteLine("\nWrite a C# program that takes a number as input and then displays a rectangle of 3 columns wide and 5 rows tall using that digit.");
         
@@ -225,7 +241,7 @@ public static class Basic
 
     }
 
-    private static void _014()
+    private static void ex014()
     {
         Console.WriteLine("\nWrite a C# program to convert from celsius degrees to Kelvin and Fahrenheit.");
 
@@ -240,7 +256,7 @@ public static class Basic
         Console.WriteLine($"\n{_014_celcius} is {_014_kelvind} kelvin and {_014_fahrenheitd} fahrenheit");
     }
     
-    private static void _015()
+    private static void ex015()
     {
         Console.WriteLine("\nWrite a C# program remove specified a character from a non-empty string using index of a character.");
 
@@ -257,7 +273,7 @@ public static class Basic
         }
     }
     
-    private static void _016()
+    private static void ex016()
     {
         Console.WriteLine("\n Write a C# program to create a new string from a given string where the first and last characters will change their positions.");
         Console.WriteLine("\nInsert the string: ");
@@ -279,7 +295,7 @@ public static class Basic
         }
     }
     
-    private static void _017()
+    private static void ex017()
     {
         Console.WriteLine("Write a C# program to create a new string from a given string (length 1 or more ) with the first character added at the front and back.");
 		Console.WriteLine("\nInsert the string: ");
@@ -292,7 +308,7 @@ public static class Basic
         }
     }
 
-    private static void _018()
+    private static void ex018()
     {
         Console.WriteLine(
             "\nWrite a C# program to check two given integers and return true if one is negative and one is positive.");
@@ -318,7 +334,7 @@ public static class Basic
         }
     }
 
-    private static void _019()
+    private static void ex019()
     {
         Console.WriteLine("\nWrite a C# program to compute the sum of two given integers, if two values are equal then return the triple of their sum.");
 		
@@ -339,7 +355,7 @@ public static class Basic
         }
     }
     
-    private static void _020()
+    private static void ex020()
     {
         Console.WriteLine("\nWrite a C# program to get the absolute value of the difference between two given numbers." +
                           "Return double the absolute value of the difference" +
@@ -366,7 +382,7 @@ public static class Basic
         }
     }
     
-    private static void _021()
+    private static void ex021()
     {
         Console.WriteLine("\nWrite a C# program to check the sum of the two given integers and return true" +
                           "if one of the integer is 20 or if their sum is 20.");
@@ -379,7 +395,7 @@ public static class Basic
         else if (_021_two == 20) { Console.WriteLine("The second integer is 20."); }
     }
 
-    private static void _022()
+    private static void ex022()
     {
         Console.WriteLine("\nWrite a C# program to check if an given integer is within 20 of 100 or 200.");
         
@@ -390,7 +406,7 @@ public static class Basic
         else { Console.WriteLine("The integer is out of range."); }
     }
 
-    private static void _023()
+    private static void ex023()
     {
         Console.WriteLine("\nWrite a C# program to convert a given string into lowercase.");
 
@@ -403,7 +419,7 @@ public static class Basic
         Console.WriteLine("The string in lower case is: " + _023_stringlower);
     }
 
-    private static void _024()
+    private static void ex024()
     {
         Console.WriteLine("\nWrite a C# program to find the longest word in a string.");
 
@@ -411,22 +427,33 @@ public static class Basic
 
         string? _024_string = Console.ReadLine();
 
-        string[] _024_array = _024_string.Split(' ');
+        Console.WriteLine("The string: " + _024_string);
 
-        for (int i = 0; i < _024_array; i++)
-        {
-            
-        }
+        string[]? _024_array = _024_string.Split(' ');
         
-        Console.WriteLine();
+        
+
+        for (int i = 0; i < _024_array.Length; i++)
+        {
+            int _024_maxvalue = _024_array[i].Length;;
+            string? _024_word = null;
+
+            if (_024_array[i].Length > _024_maxvalue)
+            {
+                _024_word = _024_array[i];
+                i++;
+                Console.WriteLine("_024_word");
+            }
+            Console.WriteLine("\nThe longest word is: " + _024_word);
+        }
     }
 
-    private static void _025()
+    private static void ex025()
     {
         Console.WriteLine("\nWrite a C# program to print the odd numbers from 1 to 99. Prints one number per line.");
     }
 
-    private static void _026()
+    private static void ex026()
     {
         Console.WriteLine("\nWrite a C# program to compute the sum of the first 500 prime numbers.");
     }
@@ -443,55 +470,55 @@ public static class Basic
             
             switch (_Finaloption)
             {
-                case 1: _001();
+                case 1: ex001();
                     break;
-                case 2: _002();
+                case 2: ex002();
                     break;
-                case 3: _003();
+                case 3: ex003();
                     break;
-                case 4: _004();
+                case 4: ex004();
                     break;
-                case 5: _005();
+                case 5: ex005();
                     break; 
-                case 6: _006();
+                case 6: ex006();
                     break;
-                case 7: _007();
+                case 7: ex007();
                     break;
-                case 8: _008();
+                case 8: ex008();
                     break;
-                case 9: _009();
+                case 9: ex009();
                     break;
-                case 10: _010();
+                case 10: ex010();
                     break;
-                case 11: _011();
+                case 11: ex011();
                     break;
-                case 12: _012();
+                case 12: ex012();
                     break;
-                case 13: _013();
+                case 13: ex013();
                     break;
-                case 14: _014();
+                case 14: ex014();
                     break;
-                case 15: _015();
+                case 15: ex015();
                     break;
-                case 16: _016();
+                case 16: ex016();
                     break;
-                case 17: _017();
+                case 17: ex017();
                     break;
-                case 18: _018();
+                case 18: ex018();
                     break;
-                case 19: _019();
+                case 19: ex019();
                     break;
-                case 20: _020();
+                case 20: ex020();
                     break;
-                case 21: _021();
+                case 21: ex021();
                     break;
-                case 22: _022();
+                case 22: ex022();
                     break;
-                case 23: _023();
+                case 23: ex023();
                     break;
-                case 24: _024();
+                case 24: ex024();
                     break;
-                case 25: _025();
+                case 25: ex025();
                     break;
             }
         }  while (_Finaloption != 0);
