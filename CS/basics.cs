@@ -389,7 +389,47 @@ public static class Basic
         else if (_022_integer <= 120 && _022_integer >= 80) { Console.WriteLine("The integer is withing 20 of 100"); }
         else { Console.WriteLine("The integer is out of range."); }
     }
-    
+
+    private static void _023()
+    {
+        Console.WriteLine("\nWrite a C# program to convert a given string into lowercase.");
+
+        Console.WriteLine("Insert the string you want to turn to lowercase: ");
+
+        string? _023_string = Console.ReadLine();
+
+        string _023_stringlower = _023_string.ToLower();
+
+        Console.WriteLine("The string in lower case is: " + _023_stringlower);
+    }
+
+    private static void _024()
+    {
+        Console.WriteLine("\nWrite a C# program to find the longest word in a string.");
+
+        Console.WriteLine("\nInsert the string you want to find the longest word of: ");
+
+        string? _024_string = Console.ReadLine();
+
+        string[] _024_array = _024_string.Split(' ');
+
+        for (int i = 0; i < _024_array; i++)
+        {
+            
+        }
+        
+        Console.WriteLine();
+    }
+
+    private static void _025()
+    {
+        Console.WriteLine("\nWrite a C# program to print the odd numbers from 1 to 99. Prints one number per line.");
+    }
+
+    private static void _026()
+    {
+        Console.WriteLine("\nWrite a C# program to compute the sum of the first 500 prime numbers.");
+    }
     
     private static void Main()
     {
@@ -444,6 +484,14 @@ public static class Basic
                 case 20: _020();
                     break;
                 case 21: _021();
+                    break;
+                case 22: _022();
+                    break;
+                case 23: _023();
+                    break;
+                case 24: _024();
+                    break;
+                case 25: _025();
                     break;
             }
         }  while (_Finaloption != 0);
